@@ -97,7 +97,8 @@ storage.forEach(
 );
 ```
 - Requires 0.1~
-- `Function`
+- callback
+    - `Function`
 
 ### clear
 ```javascript
