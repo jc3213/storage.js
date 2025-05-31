@@ -113,17 +113,17 @@ await storage.flush();
 
 ## Code Sample
 ```javascript
-let db = new Storage('example', 'test');
-console.log(await db.set('aaa', 'bbb')); // 'bbb';
-console.log(await db.set('ccc', 'ddd')); // 'ddd';
-console.log(await db.set('aaa', 'eee')); // 'eee';
-console.log(await db.get('eee')); // undefined;
+let db = new Storage('sample', 'test');
+console.log(await db.set('aaa', 'bbb')); // 'aaa';
+console.log(await db.set('ccc', 'ddd')); // 'ccc';
+console.log(await db.set('aaa', 'eee')); // 'aaa'; overwrite 'aaa' => 'eee';
+console.log(await db.has('eee')); // false;
 console.log(await db.keys()); // ['aaa', 'ccc'];
 console.log(await db.values()); // ['eee', 'ddd'];
-console.log(await db.delete('aaa')); // true;
+console.log(await db.delete('aaa')); // undefined; removed 'aaa' => 'eee';
 console.log(await db.entries()); // [ {key: 'bbb', value: 'ddd'} ];
-console.log(await db.clear()); // true;
+console.log(await db.clear()); // undefined; clear all items under database 'sample' -> object store 'test'
 console.log(await db.entries()); // [];
-console.log(await db.purge()); // true;
+console.log(await db.flush()); // true;
 console.log(await indexedDB.databases()); // [];
 ```
