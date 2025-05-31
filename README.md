@@ -40,7 +40,7 @@ let storage = new Storage(dbName, storeName);
 ```javascript
 storage.set(key, value);
 ```
-- Requires 1.0~
+- Requires 0.1~
 - key
     - `String` or `Number`
 - value
@@ -50,7 +50,7 @@ storage.set(key, value);
 ```javascript
 let result = await storage.has(key);
 ```
-- Requires 1.0~
+- Requires 0.1~
 - result
     - `Boolean`
 
@@ -58,19 +58,19 @@ let result = await storage.has(key);
 ```javascript
 let value = await storage.get(key);
 ```
-- Requires 1.0~
+- Requires 0.1~
 
 ### delete
 ```javascript
 await storage.delete(key);
 ```
-- Requires 1.0~
+- Requires 0.1~
 
 ### entries
 ```javascript
 let entries = await storage.entires();
 ```
-- Requires 1.0~
+- Requires 0.1~
 - entries
     - `Array`
 
@@ -78,7 +78,7 @@ let entries = await storage.entires();
 ```javascript
 let keys = await storage.keys();
 ```
-- Requires 1.0~
+- Requires 0.1~
 - keys
     - `Array`
 
@@ -86,7 +86,7 @@ let keys = await storage.keys();
 ```javascript
 let values = await storage.values();
 ```
-- Requires 1.0~
+- Requires 0.1~
 - values
     - `Array`
 
@@ -96,20 +96,20 @@ storage.forEach(
     callback: function,
 );
 ```
-- Requires 1.0~
+- Requires 0.1~
 - `Function`
 
 ### clear
 ```javascript
 await storage.clear();
 ```
-- Requires 1.0~
+- Requires 0.1~
 
 ### flush
 ```javascript
 await storage.flush();
 ```
-- Requires 1.0~
+- Requires 0.1~
 
 ## Code Sample
 ```javascript
