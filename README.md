@@ -26,11 +26,13 @@ let storage = new Storage(dbName, storeName);
 
 ## Method
 - [set](#set)
+- [has](#has)
 - [get](#get)
 - [delete](#delete)
 - [entries](#entries)
 - [keys](#keys)
 - [values](#values)
+- [forEach](#foreach)
 - [clear](#clear)
 - [flush](#flush)
 
@@ -43,6 +45,14 @@ storage.set(key, value);
     - `String` or `Number`
 - value
     - `String`, `Number`, `Object`, `Array`, or `Blob`
+
+### has
+```javascript
+let result = await storage.has(key);
+```
+- Requires 0.1~
+- result
+    - `Boolean`
 
 ### get
 ```javascript
@@ -79,6 +89,15 @@ let values = await storage.values();
 - Requires 0.1~
 - values
     - `Array`
+
+### forEach
+```javascript
+storage.forEach(
+    callback: function,
+);
+```
+- Requires 0.1~
+- `Function`
 
 ### clear
 ```javascript
