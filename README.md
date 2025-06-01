@@ -18,10 +18,10 @@
 let storage = new Storage(dbName, storeName);
 ```
 - dbName
-    - `String`
+    - `string`
     - The name of the database of `indexedDB`
 - storeName
-    - `String`
+    - `string`
     - The name of the object store in database of `indexedDB`
 
 ## Method
