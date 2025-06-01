@@ -40,86 +40,77 @@ let storage = new Storage(dbName, storeName);
 ```javascript
 storage.set(key, value);
 ```
-- Requires 0.1~
 - key
-    - `String` or `Number`
+    - `string` or `number`
 - value
-    - `String`, `Number`, `Object`, `Array`, or `Blob`
+    - `string`, `number`, `object`, `array`, or `blob`
 
 ### has
 ```javascript
 let result = await storage.has(key);
 ```
-- Requires 0.1~
 - result
-    - `Boolean`
+    - `boolean`
 
 ### get
 ```javascript
 let value = await storage.get(key);
 ```
-- Requires 0.1~
 
 ### delete
 ```javascript
 await storage.delete(key);
 ```
-- Requires 0.1~
 
 ### entries
 ```javascript
 let entries = await storage.entires();
 ```
-- Requires 0.1~
 - entries
-    - `Array`
+    - `array`
 
 ### keys
 ```javascript
 let keys = await storage.keys();
 ```
-- Requires 0.1~
 - keys
-    - `Array`
+    - `array`
 
 ### values
 ```javascript
 let values = await storage.values();
 ```
-- Requires 0.1~
 - values
-    - `Array`
+    - `array`
 
 ### forEach
 ```javascript
-storage.forEach(
-    callback: function,
+await storage.forEach(
+    callback: function
 );
 ```
-- Requires 0.1~
 - callback
-    - `Function`
+    - `function`
+    - ( entry: { key, value } ) => void
 
 ### clear
 ```javascript
 await storage.clear();
 ```
-- Requires 0.1~
 
 ### flush
 ```javascript
 await storage.flush();
 ```
-- Requires 0.1~
 
 ## Code Sample
 ```javascript
 let db = new Storage('sample', 'test');
 console.log(await db.set('aaa', 'bbb')); // 'aaa';
 console.log(await db.set('ccc', 'ddd')); // 'ccc';
-console.log(await db.set('aaa', 'eee')); // 'aaa'; overwrite 'aaa' => 'eee';
-console.log(await db.has('eee')); // false;
+console.log(await db.has('bbb')); // false;
 console.log(await db.keys()); // ['aaa', 'ccc'];
+console.log(await db.set('aaa', 'eee')); // 'aaa'; overwrite 'aaa' => 'eee';
 console.log(await db.values()); // ['eee', 'ddd'];
 console.log(await db.delete('aaa')); // undefined; removed 'aaa' => 'eee';
 console.log(await db.entries()); // [ {key: 'bbb', value: 'ddd'} ];
